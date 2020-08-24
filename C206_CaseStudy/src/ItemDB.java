@@ -40,19 +40,4 @@ public class ItemDB {
 			}
 		}
 	}
-	
-	public static void ItemMenu() {
-		ItemDB.setHeader("Item List");
-		System.out.println("1. View Items");
-		System.out.println("2. Add Items");
-		System.out.println("3. Edit Items");
-		System.out.println("4. Delete Items");
-		Helper.line(80, "-");
-	}
-
-	private static void setHeader(String header) {
-		Helper.line(80, "-");
-		System.out.println(header);
-		Helper.line(80, "-");
-	}
 }
