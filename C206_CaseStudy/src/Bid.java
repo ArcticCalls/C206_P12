@@ -6,7 +6,7 @@ public class Bid {
 
 
 
-public bid(String bidid, String bidname) {
+public Bid(String bidid, String bidname) {
 	this.bidid = bidid;
 	this.bidname = bidname;
 }

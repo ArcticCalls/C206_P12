@@ -1,4 +1,27 @@
+import static org.junit.Assert.assertNull;
+
+import java.util.ArrayList;
 
 public class BidDB {
+	
+	public static ArrayList<Bid> bidList = new ArrayList<Bid>();
 
+	public static void addBid(Bid bid1) {
+		// TODO Auto-generated method stub
+		bidList.add(bid1);
+	}
+	
+	public static void deleteBid(Bid userInput) {
+		for (int i=0; i < BidDB.bidList.size(); i++ ) {
+			if (BidDB.bidList.get(i) == userInput) {
+				BidDB.bidList.remove(i);
+			}
+		}
+	}
+	public static void viewBid() {
+		for (int i=0; i < BidDB.bidList.size(); i++) {
+			System.out.println(BidDB.bidList.get(i));
+	
+		}
+	}
 }
