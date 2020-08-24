@@ -11,7 +11,7 @@ public class Category {
 		return categoryName;
 	}
 	
-	public void setCategoryName(String name) {
+	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
 	

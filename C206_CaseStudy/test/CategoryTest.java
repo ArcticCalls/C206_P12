@@ -32,8 +32,8 @@ public class CategoryTest {
 		//Test that the categoryList is 1 after adding in an object
 		CategoryDB.addCategory(category1);
 		assertEquals("Test that the size is 1", 1, CategoryDB.categoryList.size());
-		//Test 4
-		assertSame("Test 4", category1, CategoryDB.categoryList.get(0));
+		//Test that the item has been added
+		assertSame("Test that the item has been added", category1, CategoryDB.categoryList.get(0));
 		
 	}
 	@Test
@@ -51,8 +51,16 @@ public class CategoryTest {
 	public void viewAllCategoryTest() {
 		//Test that the categoryList is not null
 		assertNotNull("Test that the categoryList is not null", CategoryDB.categoryList);
-		//Test that every element inside the array are displayed correctly
-		CategoryDB.viewCategory();
+		//Test that the size of the array increases after adding 2 more items
+		CategoryDB.addCategory(userInput);
+		CategoryDB.addCategory(category1);
+		assertEquals("Test that the size is 2", 2, CategoryDB.categoryList.size());
+		//Test that the output is the same as the expected output
+		String expectedOutput = CategoryDB.viewCategory();
+		String testOutput = "Test Category to delete";
+		testOutput += "Artworks";
+		
+		assertEquals("Test that the output is the same as the expected output", expectedOutput, testOutput);
 	}
 
 }

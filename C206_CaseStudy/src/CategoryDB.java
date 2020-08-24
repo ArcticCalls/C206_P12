@@ -18,10 +18,14 @@ public class CategoryDB {
 			}
 		}
 	}
-	public static void viewCategory() {
+	public static String viewCategory() {
+		String output = "";
 		for (int i=0; i < CategoryDB.categoryList.size(); i++) {
-			System.out.println(CategoryDB.categoryList.get(i));
+			output += CategoryDB.categoryList.get(i).getCategoryName();
+					
 		}
+		return output;
+		
 	}
 	
 }
