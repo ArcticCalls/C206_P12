@@ -8,4 +8,15 @@ import org.junit.Test;
 
 public class ItemsTest {
 	private ArrayList<items> itemList;
+	
+	public ItemsTest() {
+		super();
+	}
+	
+	@Test
+	public void addItemTest() {
+		assertNotNull("Check if there is valid items arraylist to add to", itemList);
+		
+	}
+	
 }

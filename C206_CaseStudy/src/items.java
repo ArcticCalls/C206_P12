@@ -5,9 +5,9 @@ public class items {
 	private Double minBid;
 	private String startDate;
 	private String endDate;
-	private String bidIncre;
+	private Double bidIncre;
 	
-	public items(String itemName, String itemDesc, Double minBid, String startDate, String endDate, String bidIncre) {
+	public items(String itemName, String itemDesc, Double minBid, String startDate, String endDate, Double bidIncre) {
 		super();
 		this.itemName = itemName;
 		this.itemDesc = itemDesc;
@@ -57,12 +57,19 @@ public class items {
 		this.endDate = endDate;
 	}
 
-	public String getBidIncre() {
+	public Double getBidIncre() {
 		return bidIncre;
 	}
 
-	public void setBidIncre(String bidIncre) {
+	public void setBidIncre(Double bidIncre) {
 		this.bidIncre = bidIncre;
 	}
+
+	@Override
+	public String toString() {
+		return "items [itemName=" + itemName + ", itemDesc=" + itemDesc + ", minBid=" + minBid + ", startDate="
+				+ startDate + ", endDate=" + endDate + ", bidIncre=" + bidIncre + "]";
+	}
+	
 	
 }
