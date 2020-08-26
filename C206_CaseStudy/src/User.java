@@ -1,10 +1,13 @@
 
-public class UserClass {
+public class User {
 	
 	private String userID;
 	private String email;
-	private String status;
-	public UserClass(String userID, String email, String status) {
+	private boolean status;
+	
+	
+	
+	public User(String userID, String email, boolean status) {
 		super();
 		this.userID = userID;
 		this.email = email;
@@ -22,12 +25,14 @@ public class UserClass {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getStatus() {
+	public boolean isStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
+	
+
 	
 	
 	

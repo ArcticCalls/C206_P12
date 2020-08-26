@@ -8,22 +8,22 @@ import org.junit.Test;
 
 public class UserTest {
 	
-	private ArrayList<UserClass> userArray;
+	private ArrayList<User> userArray;
 	
 	public UserTest() {
 		super();
 	}
 	
-	private UserClass u1;
-	private UserClass u2;
+	private User u1;
+	private User u2;
 	
 	@Before
 	public void setup() throws Exception{
 		//test users
-		u1 = new UserClass("TestUser1","Testuser1@gmail.com","block");
-		u2 = new UserClass("TestUser2","Testuser2@gmail.com","unblock");
+		u1 = new User("TestUser1","Testuser1@gmail.com",true);
+		u2 = new User("TestUser2","Testuser2@gmail.com",false);
 		
-		userArray = new ArrayList<UserClass>();
+		userArray = new ArrayList<User>();
 	}
 	
 	@Test

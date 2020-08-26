@@ -7,7 +7,7 @@ public class C206_CaseStudy {
 		// TODO Auto-generated method stub
 		
 		//Array List for user class to add, delete, block and unblock users
-		ArrayList<UserClass> userArray = new ArrayList<>();
+		ArrayList<User> userArray = new ArrayList<>();
 		
 		
 		int option =0;
@@ -22,11 +22,11 @@ public class C206_CaseStudy {
 				int useroption = Helper.readInt("Please enter your option");
 				if(useroption == 1) {
 					// new users are not block
-					String status = "unblock";
+					boolean status = false;
 					String userid = Helper.readString("Please enter userid: ");
 					String email = Helper.readString("Please enter email: ");
 					//add user into array list
-					userArray.add(new UserClass("userid","email",status));
+					userArray.add(new User(userid,email,status));
 					
 					
 				}else if(useroption == 2) {
@@ -36,35 +36,54 @@ public class C206_CaseStudy {
 							userArray.remove(i);
 						}
 					}
-				}else if(useroption == 3) /* block user */ {
+				}else if(useroption == 3) /* View user */ {
 					String userid = Helper.readString("Please enter userid: ");
 					String status = Helper.readString("enter 'block' to block users: ");
 					for(int i =0; i<userArray.size(); i++) {
 						if(userArray.get(i).getUserID() == userid) {
-							userArray.get(i).setStatus(status);
+							System.out.println("User: " + userArray.get(i).getUserID()+"\n Email: " +userArray.get(i).getEmail() + " \n Status: "+ userArray.get(i).isStatus());
 						}
 					}
 					
 					
-				}else if(useroption == 4) /* unblock user */ {
+				}else if(useroption == 4) /* Block/Unblock user */ {
 					String userid = Helper.readString("Please enter userid: ");
-					String status = Helper.readString("enter 'unblock' to unblock users: ");
+					boolean status = Helper.readBoolean("Please enter true to set user as block or false to set user as unblock: ");
 					for(int i =0; i<userArray.size(); i++) {
 						if(userArray.get(i).getUserID() == userid) {
-							userArray.get(i).setStatus(status);
+							
 						}
 					}
 				}else {
 					System.out.println("Invalid Option");
 				}
+			}else if(option == 2) {
+				//category menu - Jun Yang
+				System.out.println("Category Menu");
+				C206_CaseStudy.categoryMenu();
+				int catOption = Helper.readInt("Please enter your option: ");
+				if(catOption == 1) {
+					System.out.println("Add Category:");
+					String CatName = Helper.readString("Please enter category name: "); // - Wei Ren
+					CategoryDB.categoryList.add(new Category(CatName)); // - Wei Ren
+				
+				} // Category Menu WIP
+				
+			}else if(option ==3) {
+				//Bid Menu
+				
+			}else if(option == 4) {
+				//Sell Menu
+				
+			}else {
+				System.out.println("Invalid Option");
 			}
 		}
-		
-
-		
+			
 	}
 	
-	// Menu(s)
+	
+	// Menu(s) - Jun Yang
 	public static void menu() {
 		System.out.println("Menu:");
 		System.out.println("1. User Menu");
@@ -79,15 +98,16 @@ public class C206_CaseStudy {
 		System.out.println("User Menu:");
 		System.out.println("1. Add User");
 		System.out.println("2. Delete User");
-		System.out.println("3. Block User");
-		System.out.println("4. Unblock User");
-		System.out.println("5. Quit");
+		System.out.println("3. View User");
+		System.out.println("4. Block/Unblock User");
+		System.out.println("6. Quit");
 	}
 	
 	public static void categoryMenu() {
 		System.out.println("Category Menu:");
 		System.out.println("1. Add Category");
 		System.out.println("2. Delete Category");
+		System.out.println("3. View Category");
 		System.out.println("3. Quit");
 	}
 	public static void bidMenu() {
