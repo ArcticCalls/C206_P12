@@ -27,9 +27,15 @@ public class C206_CaseStudy {
 					UserDB.viewUser();
 				}else if(useroption == 4) { // block/unblock user
 					String userid  = Helper.readString("Enter userid: ");
-					String status
+					boolean status = Helper.readBoolean("Enter true or false to set status of user to block or unblock respectivly: ");
+					UserDB.statusUser(userid, status);
 				}else if(useroption == 5) { // edit user
-					
+					String user1 = Helper.readString("Enter userid to edit: ");
+					String userid = Helper.readString("New UserID: ");
+					String email= Helper.readString("Enter email: ");
+					String role = "user";
+					boolean status=false;
+					UserDB.editUser(user1, userid, email, role, status);
 				}else if(useroption == 6 ) { // quit usermenu
 					System.out.println("Quitting User Menu...");
 					break;

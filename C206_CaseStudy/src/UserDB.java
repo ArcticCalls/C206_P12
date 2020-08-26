@@ -19,17 +19,17 @@ public class UserDB {
 	}
 	
 	//set Status of user (block/unblock)
-	public static void statusUser(User user1, boolean status) {
+	public static void statusUser(String user1, boolean status) {
 		for(int i =0; i<userArray.size(); i++) {
-			if(UserDB.userArray.get(i) == user1) {
+			if(UserDB.userArray.get(i).getUserID() == user1) {
 				UserDB.userArray.get(i).setStatus(status);
 			}
 		}
 	}
 	//edit User
-	public static void editUser(User user1, String userid, String email, String role, boolean status) {
+	public static void editUser(String user1, String userid, String email, String role, boolean status) {
 		for(int i=0; i<userArray.size(); i++) {
-			if(UserDB.userArray.get(i) == user1) {
+			if(UserDB.userArray.get(i).getUserID() == user1) {
 				UserDB.userArray.get(i).setUserID(userid);
 				UserDB.userArray.get(i).setEmail(email);
 				UserDB.userArray.get(i).setRole(role);
