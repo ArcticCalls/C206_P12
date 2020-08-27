@@ -71,6 +71,9 @@ public class C206_CaseStudy {
 				else if (userInput == 6) {
 					CategoryDB.viewItemsCategory();
 				}
+				else if (userInput == 7) {
+					System.exit(userInput);
+				}
 				else {
 					System.out.println("Invalid Option selected. Please try again");
 				}
@@ -116,7 +119,7 @@ public class C206_CaseStudy {
 		System.out.println("4. Search Item by Full or Partial Name");
 		System.out.println("5. Update Category Name");
 		System.out.println("6. Display number of items in each category");
-		System.out.println("4. Quit");
+		System.out.println("7. Quit");
 	}
 	public static void bidMenu() {
 		System.out.println("Bid Menu");
