@@ -41,6 +41,39 @@ public class C206_CaseStudy {
 					break;
 				}
 			}else if(option == 2) {
+				int userInput = Helper.readInt("Please enter your option:");
+				
+				if (userInput == 1) {
+					String categoryInsert = Helper.readString("Please enter the category name to add");
+					CategoryDB.addCategory(new Category(categoryInsert));
+				}
+				else if (userInput == 2) {
+					String categoryDelete = Helper.readString("Please enter the category name to delete");
+					if (ItemDB.itemList.size() == 0) {
+						CategoryDB.deleteCategory(new Category(categoryDelete));
+					}
+					else {
+						System.out.println("There are still items in the category.");
+					}
+				}
+				else if (userInput == 3) {
+					CategoryDB.viewCategory();
+				}
+				else if (userInput == 4) {
+					String userInputSearch = Helper.readString("Please enter full name or partial name of category to search");
+					CategoryDB.searchCategory(userInputSearch);
+				}
+				else if (userInput == 5) {
+					String userInputUpdate = Helper.readString("Please enter category name to update");
+					String userInputUpdate2 = Helper.readString("Please enter new category name to update");
+					CategoryDB.updateCategory(userInputUpdate, userInputUpdate2);
+				}
+				else if (userInput == 6) {
+					CategoryDB.viewItemsCategory();
+				}
+				else {
+					System.out.println("Invalid Option selected. Please try again");
+				}
 				
 			}else if(option == 3) {
 				
@@ -80,7 +113,10 @@ public class C206_CaseStudy {
 		System.out.println("1. Add Category");
 		System.out.println("2. Delete Category");
 		System.out.println("3. View Category");
-		System.out.println("3. Quit");
+		System.out.println("4. Search Item by Full or Partial Name");
+		System.out.println("5. Update Category Name");
+		System.out.println("6. Display number of items in each category");
+		System.out.println("4. Quit");
 	}
 	public static void bidMenu() {
 		System.out.println("Bid Menu");
