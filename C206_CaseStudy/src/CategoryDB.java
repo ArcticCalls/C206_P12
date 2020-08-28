@@ -18,10 +18,42 @@ public class CategoryDB {
 			}
 		}
 	}
-	public static void viewCategory() {
+	public static String viewCategory() {
+		String output = "";
 		for (int i=0; i < CategoryDB.categoryList.size(); i++) {
-			System.out.println(CategoryDB.categoryList.get(i));
+			output += CategoryDB.categoryList.get(i).getCategoryName();
+					
 		}
+		return output;
+		
+	}
+	public static void searchCategory(String userSearch) {
+		for (int i=0; i < CategoryDB.categoryList.size(); i++) {
+			String partialSearch = userSearch;
+			String Search = CategoryDB.categoryList.get(i).getCategoryName();
+			if (Search == partialSearch || Search.contains(partialSearch)) {
+				System.out.println(Search);
+			}
+			else {
+				System.out.println("Search not found. Please try again");
+			}
+		}
+	}
+	public static void updateCategory(String userUpdate, String userUpdate2) {
+		for (int i=0; i < CategoryDB.categoryList.size(); i++) {
+			String searchUpdate = userUpdate;
+			String Search = CategoryDB.categoryList.get(i).getCategoryName();
+			if (Search == searchUpdate || Search.contains(searchUpdate)) {
+				CategoryDB.categoryList.get(i).setCategoryName(userUpdate2);
+			}
+		}
+	}
+	public static String viewItemsCategory() {
+		String output = "";
+		for (int i=0; i < CategoryDB.categoryList.size(); i++) {
+			output += ItemDB.itemList.size();
+	}
+		return output;
 	}
 	
 }
