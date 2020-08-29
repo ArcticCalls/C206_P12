@@ -11,9 +11,12 @@ public class CategoryDB {
 		categoryList.add(category1);
 	}
 	
-	public static void deleteCategory(Category userInput) {
+	public static void deleteCategory(String userInput) {
+		
 		for (int i=0; i < CategoryDB.categoryList.size(); i++ ) {
-			if (CategoryDB.categoryList.get(i) == userInput) {
+			
+			
+			if (CategoryDB.categoryList.get(i).getCategoryName().equalsIgnoreCase(userInput)) {	
 				CategoryDB.categoryList.remove(i);
 			}
 		}
@@ -21,10 +24,11 @@ public class CategoryDB {
 	public static String viewCategory() {
 		String output = "";
 		for (int i=0; i < CategoryDB.categoryList.size(); i++) {
-			output += CategoryDB.categoryList.get(i).getCategoryName();
-					
+			output = CategoryDB.categoryList.get(i).getCategoryName();
+			System.out.println(output);
 		}
 		return output;
+		
 		
 	}
 	public static void searchCategory(String userSearch) {
@@ -43,7 +47,7 @@ public class CategoryDB {
 		for (int i=0; i < CategoryDB.categoryList.size(); i++) {
 			String searchUpdate = userUpdate;
 			String Search = CategoryDB.categoryList.get(i).getCategoryName();
-			if (Search == searchUpdate || Search.contains(searchUpdate)) {
+			if (Search.equalsIgnoreCase(searchUpdate)) {
 				CategoryDB.categoryList.get(i).setCategoryName(userUpdate2);
 			}
 		}
@@ -55,5 +59,6 @@ public class CategoryDB {
 	}
 		return output;
 	}
+
 	
 }

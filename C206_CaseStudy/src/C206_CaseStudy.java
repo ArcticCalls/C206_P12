@@ -58,30 +58,37 @@ public class C206_CaseStudy {
 						int userInput = Helper.readInt("Please enter your option:");
 
 						if (userInput == 1) {
-							String categoryInsert = Helper.readString("Please enter the category name to add");
-							CategoryDB.addCategory(new Category(categoryInsert));
-						} else if (userInput == 2) {
-							String categoryDelete = Helper.readString("Please enter the category name to delete");
+							String category1 = Helper.readString("Please enter the category name to add:");
+							CategoryDB.addCategory(new Category(category1));
+						}
+						else if (userInput == 2) {
+							String userInput1 = Helper.readString("Please enter the category name to delete:");
 							if (ItemDB.itemList.size() == 0) {
-								CategoryDB.deleteCategory(new Category(categoryDelete));
-							} else {
+								CategoryDB.deleteCategory(userInput1);
+							}
+							else {
 								System.out.println("There are still items in the category.");
 							}
-						} else if (userInput == 3) {
+						}
+						else if (userInput == 3) {
 							CategoryDB.viewCategory();
-						} else if (userInput == 4) {
-							String userInputSearch = Helper
-									.readString("Please enter full name or partial name of category to search");
-							CategoryDB.searchCategory(userInputSearch);
-						} else if (userInput == 5) {
-							String userInputUpdate = Helper.readString("Please enter category name to update");
-							String userInputUpdate2 = Helper.readString("Please enter new category name to update");
-							CategoryDB.updateCategory(userInputUpdate, userInputUpdate2);
-						} else if (userInput == 6) {
+						}
+						else if (userInput == 4) {
+							String userSearch = Helper.readString("Please enter full name or partial name of category to search:");
+							CategoryDB.searchCategory(userSearch);
+						}
+						else if (userInput == 5) {
+							String userUpdate = Helper.readString("Please enter category name to update");
+							String userUpdate2 = Helper.readString("Please enter new category name to update:");
+							CategoryDB.updateCategory(userUpdate, userUpdate2);
+						}
+						else if (userInput == 6) {
 							CategoryDB.viewItemsCategory();
-						} else if (userInput == 7) {
+						}
+						else if (userInput == 7) {
 							System.exit(userInput);
-						} else {
+						}
+						else {
 							System.out.println("Invalid Option selected. Please try again");
 						}
 

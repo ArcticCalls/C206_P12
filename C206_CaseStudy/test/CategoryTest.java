@@ -8,6 +8,7 @@ public class CategoryTest {
 
 	private Category category1;
 	private Category userInput;
+	private String userInput2;
 	private String userSearch;
 	private String userUpdate;
 	private String userUpdate2;
@@ -16,6 +17,7 @@ public class CategoryTest {
 		
 		category1 = new Category("Artworks");
 		userInput = new Category("Test Category to delete");
+		userInput2 = ("Artworks");
 		userSearch = ("Art");
 		userUpdate = ("Artworks");
 		userUpdate2 = ("Artworks of Mona Lisa");
@@ -26,6 +28,9 @@ public class CategoryTest {
 		
 		category1 = null;
 		userInput = null;
+		userSearch = null;
+		userUpdate = null;
+		userUpdate2 = null;
 		CategoryDB.categoryList.clear();
 	}
 
@@ -49,7 +54,7 @@ public class CategoryTest {
 		//Test that the delete based on name works and that the correct name is deleted
 		CategoryDB.addCategory(category1);
 		CategoryDB.addCategory(userInput);
-		CategoryDB.deleteCategory(userInput);
+		CategoryDB.deleteCategory(userInput2);
 		//Test that after the delete, the size of the arraylist decreases
 		assertEquals("Test that the size of the array decreases",1,CategoryDB.categoryList.size());
 	}
@@ -64,10 +69,11 @@ public class CategoryTest {
 		//Test that the output is the same as the expected output
 		String expectedOutput = CategoryDB.viewCategory();
 		String testOutput = "Test Category to delete";
-		testOutput += "Artworks";
+		testOutput = "Artworks";
 		
 		assertEquals("Test that the output is the same as the expected output", expectedOutput, testOutput);
 	}
+	@Test
 	public void searchCategoryTest() {
 		//Test that the categoryList is not null
 		assertNotNull("Test that the categoryList is not null", CategoryDB.categoryList);
@@ -77,6 +83,7 @@ public class CategoryTest {
 		//Test that the search function works
 		CategoryDB.searchCategory(userSearch);
 	}
+	@Test
 	public void updateCategoryTest() {
 		//Test that the categoryList is not null
 		assertNotNull("Test that the categoryList is not null", CategoryDB.categoryList);
@@ -86,6 +93,7 @@ public class CategoryTest {
 		//Test that the update function works
 		CategoryDB.updateCategory(userUpdate, userUpdate2);
 	}
+	@Test
 	public void searchItemCategoryTest() {
 		//Test that the categoryList is not null
 		assertNotNull("Test that the categoryList is not null", CategoryDB.categoryList);
@@ -97,3 +105,4 @@ public class CategoryTest {
 	}
 
 }
+
