@@ -30,11 +30,12 @@ public class C206_CaseStudy {
 							String email = Helper.readString("Enter email:");
 							String password1 = Helper.readString("Enter Password:");
 							UserDB.userArray.add(new User(useridAdd, email, role, password1, status));
-
+							System.out.println("User Added");
 						} else if (useroption == 2) {// delete user by email
 							String email = Helper.readString("Enter user email to delete: ");
 							UserDB.deleteUser(email);
 						} else if (useroption == 3) { // view user
+							System.out.println("User List:");
 							UserDB.viewUser();
 						} else if (useroption == 4) { // block/unblock user
 							String userid1 = Helper.readString("Enter userid:");

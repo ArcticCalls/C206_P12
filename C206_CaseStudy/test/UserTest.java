@@ -33,8 +33,8 @@ public class UserTest {
 		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
 		//The item just added is as same as the first item of the list
 		userArray.add(u1);
-		assertEquals("Check that Camcorder arraylist size is 1", 1, userArray.size());
-		assertSame("Check that Camcorder is added", u1, userArray.get(0));
+		assertEquals("Check that Camcorder arraylist size is 1", 1, UserDB.userArray.size());
+		assertSame("Check that Camcorder is added", u1, UserDB.userArray.get(0));
 	}
 	@Test
 	public void delUser() {

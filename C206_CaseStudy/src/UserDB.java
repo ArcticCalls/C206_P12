@@ -4,10 +4,14 @@ public class UserDB {
 	//Array List for user class to add, delete, edit, block and unblock users
 	public static ArrayList<User> userArray = new ArrayList<>();
 	
+	
+	
 	//add user
 	public static void addUser(User user1) {
 		userArray.add(user1);
 	}
+	
+	
 	
 	//delete user via email
 	public static void deleteUser(String email) {
@@ -42,7 +46,8 @@ public class UserDB {
 	public static String viewUser() {
 		String output = "";
 		for(int i =0; i< UserDB.userArray.size(); i++) {
-			
+			 output+= String.format("User:%s \nEmail:%s",UserDB.userArray.get(i).getUserID(),UserDB.userArray.get(i).getEmail());
+			 System.out.println(output);
 		}
 		return output;
 	}
