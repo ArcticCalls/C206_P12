@@ -23,5 +23,13 @@ public class BidDB {
 			System.out.println(BidDB.bidList.get(i));
 	
 		}
+	}	public static void updateBid(String userUpdate, String userUpdate2) {
+		for (int i=0; i < BidDB.categoryList.size(); i++) {
+			String searchUpdate = userUpdate;
+			String Search = BidDB.bidList.get(i).getBidname();
+			if (Search.equalsIgnoreCase(searchUpdate)) {
+				BidDB.bidList.get(i).setBidname(userUpdate2);
+			}
+		}
 	}
 }

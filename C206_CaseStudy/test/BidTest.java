@@ -9,11 +9,17 @@ public class BidTest {
 
 	private Bid bid1;
 	private Bid userInput;
+	private String userInput2;
+
+	private String userUpdate;
+	private String userUpdate2;
 	@Before
 	public void setUp() throws Exception {
 		
 		bid1 = new Bid("S11","Vase");
 		userInput = new Bid("Bid id", "Bid name");
+		userUpdate = ("S12");
+		userUpdate2 = ("Artworks of Mona Lisa");
 	}
 
 	@After
@@ -40,9 +46,9 @@ public class BidTest {
 	@Test
 	public void deleteBidTest() {
 		//Test that the bidList is not null
-		assertNotNull("Test that the categoryList is not null", BidDB.bidList);
+		assertNotNull("Test that the bidList is not null", BidDB.bidList);
 		//Test that the delete based on name works and that the correct name is deleted
-		BidDB.addBid(category1);
+		BidDB.addBid(bid1);
 		BidDB.addBid(userInput);
 		BidDB.deleteBid(userInput);
 		//Test that after the delete, the size of the arraylist decreases
@@ -55,3 +61,15 @@ public class BidTest {
 		//Test that every element inside the array are displayed correctly
 		BidDB.viewBid();
 	}
+	@Test
+	public void updateBidTest() {
+		//Test that the categoryList is not null
+		assertNotNull("Test that the bidList is not null", BidDB.bidList);
+		//Test that the size of the array increases after adding 2 more items
+		BidDB.addBid(userInput);
+		BidDB.addBid(bid1);
+		//Test that the update function works
+		BidDB.updateBid(userUpdate, userUpdate2);
+	}
+	}
+	
