@@ -43,7 +43,7 @@ public class UserTest {
 		userArray.add(u1);
 		userArray.add(u2);
 		userArray.remove(u1);
-		assertEquals("Check if user arraylist has been decrease by 1",1, userArray.size());
+		assertEquals("Check if user arraylist has been decrease by 1",1, UserDB.userArray.size());
 		//check if u2 is the only one left
 		assertSame("Check if u2 is the only one left",u2, userArray.get(0));
 	}

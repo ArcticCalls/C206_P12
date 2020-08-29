@@ -32,7 +32,7 @@ public class C206_CaseStudy {
 							UserDB.userArray.add(new User(useridAdd, email, role, password1, status));
 							System.out.println("User Added");
 						} else if (useroption == 2) {// delete user by email
-							String email = Helper.readString("Enter user email to delete: ");
+							String email = Helper.readString("Enter user email to delete:");
 							UserDB.deleteUser(email);
 						} else if (useroption == 3) { // view user
 							System.out.println("User List:");
@@ -136,7 +136,8 @@ public class C206_CaseStudy {
 		System.out.println("2. Delete User");
 		System.out.println("3. View User");
 		System.out.println("4. Block/Unblock User");
-		System.out.println("5. Quit");
+		System.out.println("5. Edit User");
+		System.out.println("6. Quit");
 	}
 
 	public static void categoryMenu() {
