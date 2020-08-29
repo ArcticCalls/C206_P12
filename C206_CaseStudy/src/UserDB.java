@@ -27,13 +27,14 @@ public class UserDB {
 		}
 	}
 	//edit User
-	public static void editUser(String user1, String userid, String email, String role, boolean status) {
+	public static void editUser(String user1, String userid, String email, String role,String password, boolean status) {
 		for(int i=0; i<userArray.size(); i++) {
 			if(UserDB.userArray.get(i).getUserID() == user1) {
 				UserDB.userArray.get(i).setUserID(userid);
 				UserDB.userArray.get(i).setEmail(email);
 				UserDB.userArray.get(i).setRole(role);
 				UserDB.userArray.get(i).setStatus(status);
+				UserDB.userArray.get(i).setPassword(password);
 			}
 		}
 	}

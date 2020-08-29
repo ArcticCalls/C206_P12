@@ -20,8 +20,8 @@ public class UserTest {
 	@Before
 	public void setup() throws Exception{
 		//test users
-		u1 = new User("TestUser1","Testuser1@gmail.com","admin",true);
-		u2 = new User("TestUser2","Testuser2@gmail.com","user",false);
+		u1 = new User("TestUser1","Testuser1@gmail.com","admin","123",true);
+		u2 = new User("TestUser2","Testuser2@gmail.com","user","456",false);
 		
 		userArray = new ArrayList<User>();
 	}
