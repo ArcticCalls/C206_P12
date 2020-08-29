@@ -41,10 +41,8 @@ public class UserDB {
 	//view users
 	public static String viewUser() {
 		String output = "";
-		for(int i=0; i<userArray.size(); i++) {
-			output = "UserID: " + userArray.get(i).getUserID() + " Email: " + userArray.get(i).getEmail() + 
-					"Role: " + userArray.get(i).getRole() + "block: " + userArray.get(i).isStatus();
-			System.out.println("\n");
+		for(int i =0; i< UserDB.userArray.size(); i++) {
+			
 		}
 		return output;
 	}
