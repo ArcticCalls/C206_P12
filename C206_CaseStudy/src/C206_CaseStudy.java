@@ -55,8 +55,8 @@ public class C206_CaseStudy {
 							break;
 						}
 					} else if (option == 2) {
+						C206_CaseStudy.categoryMenu();
 						int userInput = Helper.readInt("Please enter your option:");
-
 						if (userInput == 1) {
 							String category1 = Helper.readString("Please enter the category name to add:");
 							CategoryDB.addCategory(new Category(category1));
@@ -78,7 +78,7 @@ public class C206_CaseStudy {
 							CategoryDB.searchCategory(userSearch);
 						}
 						else if (userInput == 5) {
-							String userUpdate = Helper.readString("Please enter category name to update");
+							String userUpdate = Helper.readString("Please enter category name to update:");
 							String userUpdate2 = Helper.readString("Please enter new category name to update:");
 							CategoryDB.updateCategory(userUpdate, userUpdate2);
 						}

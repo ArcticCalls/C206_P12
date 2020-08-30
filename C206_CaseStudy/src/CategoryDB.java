@@ -9,6 +9,7 @@ public class CategoryDB {
 	public static void addCategory(Category category1) {
 		// TODO Auto-generated method stub
 		categoryList.add(category1);
+		System.out.println("Category name has been added");
 	}
 	
 	public static void deleteCategory(String userInput) {
@@ -18,6 +19,7 @@ public class CategoryDB {
 			
 			if (CategoryDB.categoryList.get(i).getCategoryName().equalsIgnoreCase(userInput)) {	
 				CategoryDB.categoryList.remove(i);
+				System.out.println("Category has been deleted");
 			}
 		}
 	}
@@ -35,11 +37,12 @@ public class CategoryDB {
 		for (int i=0; i < CategoryDB.categoryList.size(); i++) {
 			String partialSearch = userSearch;
 			String Search = CategoryDB.categoryList.get(i).getCategoryName();
-			if (Search == partialSearch || Search.contains(partialSearch)) {
+			if (Search.equalsIgnoreCase(partialSearch) || Search.contains(partialSearch)) {
 				System.out.println(Search);
 			}
+			
 			else {
-				System.out.println("Search not found. Please try again");
+				
 			}
 		}
 	}
@@ -49,13 +52,15 @@ public class CategoryDB {
 			String Search = CategoryDB.categoryList.get(i).getCategoryName();
 			if (Search.equalsIgnoreCase(searchUpdate)) {
 				CategoryDB.categoryList.get(i).setCategoryName(userUpdate2);
+				System.out.println("Category name has been updated");
 			}
 		}
 	}
-	public static String viewItemsCategory() {
-		String output = "";
+	public static int viewItemsCategory() {
+		int output = 0;
 		for (int i=0; i < CategoryDB.categoryList.size(); i++) {
-			output += ItemDB.itemList.size();
+			output = ItemDB.itemList.size();
+			System.out.println(CategoryDB.categoryList.get(i).getCategoryName()+": "+output+ " Items");
 	}
 		return output;
 	}
